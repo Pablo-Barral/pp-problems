@@ -12,15 +12,18 @@ class JogoTest {
     @Test
     void retornaTabuleiro() {
         Jogo jogo = new Jogo();
-        jogo.logar("Jogador1", "A-1", 100, false, "Suporte", "Roupas Iniciais", "Humano");
-        jogo.logar("Jogador2", "C-5", 184, true, "Tanque", "Armadura Pesada", "Ogro");
-        jogo.logar("Jogador2", "C-6", 132, true, "Tanque", "Armadura Pesada", "Ogro");
+        jogo.criar("A-1", 100, false, new Suporte());
+        jogo.criar("C-5", 98, true, new Suporte());
+        jogo.criar("C-6", 132, true, new Dano());
+        jogo.criar("B-2", 150, false, new Dano());
+        jogo.criar("B-7", 250, false, new Tanque());
 
         List<String> saida = Arrays.asList(
-                "Joogador Jogador1 {Posição='A-1'HP='100'Fora de combate', Personagem= Classe: Suporte Raça: Humano Armadura: Roupas Iniciais}",
-                "Joogador Jogador2 {Posição='C-5'HP='184'Em combate!', Personagem= Classe: Tanque Raça: Ogro Armadura: Armadura Pesada}",
-                "Joogador Jogador2 {Posição='C-6'HP='132'Em combate!', Personagem= Classe: Tanque Raça: Ogro Armadura: Armadura Pesada}"
-);
+                "Exército {Posição='A-1'Saúde do esquadrão='100'Fora de combate', Personagem= Classe: Suporte Raça: Elfo Armadura: Armadura Leve}",
+                "Exército {Posição='C-5'Saúde do esquadrão='98'Em combate!', Personagem= Classe: Suporte Raça: Elfo Armadura: Armadura Leve}",
+                "Exército {Posição='C-6'Saúde do esquadrão='132'Em combate!', Personagem= Classe: Dano Raça: Humano Armadura: Armadura Média}",
+                "Exército {Posição='B-2'Saúde do esquadrão='150'Fora de combate', Personagem= Classe: Dano Raça: Humano Armadura: Armadura Média}",
+                "Exército {Posição='B-7'Saúde do esquadrão='250'Fora de combate', Personagem= Classe: Tanque Raça: Ogro Armadura: Armadura Pesada}");
 
         assertEquals(saida, jogo.obterTabuleiro());
     }
@@ -28,11 +31,13 @@ class JogoTest {
     @Test
     void retornaTotalUnidades() {
         Jogo jogo = new Jogo();
-        jogo.logar("Jogador1", "A-1", 100, false, "Suporte", "Roupas Iniciais", "Humano");
-        jogo.logar("Jogador2", "C-5", 184, true, "Tanque", "Armadura Pesada", "Ogro");
-        jogo.logar("Jogador2", "C-6", 132, true, "Tanque", "Armadura Pesada", "Ogro");
+        jogo.criar("A-1", 100, false, new Suporte());
+        jogo.criar("C-5", 98, true, new Suporte());
+        jogo.criar("C-6", 132, true, new Dano());
+        jogo.criar("B-2", 150, false, new Dano());
+        jogo.criar("B-7", 250, false, new Tanque());
 
-        assertEquals(2, UnidadeFactory.getTotalUnidades());
+        assertEquals(3, UnidadeFactory.getTotalUnidades());
     }
 
 }

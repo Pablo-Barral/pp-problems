@@ -5,18 +5,18 @@ import java.util.List;
 
 public class Jogo {
 
-    private List<Jogador> jogadores = new ArrayList<>();
+    private List<Exercito> exercitos = new ArrayList<>();
 
-    public void logar(String nome, String posicao, int saude, boolean statusBatalha, String tipo, String textura, String modelo3D) {
-        Unidade unidade = UnidadeFactory.getUnidades(tipo, textura, modelo3D);
-        Jogador jogador = new Jogador(nome, posicao, saude, statusBatalha, unidade);
-        jogadores.add(jogador);
+    public void criar(String posicao, int saude, boolean statusBatalha, Unidade classe) {
+        Unidade unidade = UnidadeFactory.getUnidades(classe.tipo);
+        Exercito exercito = new Exercito(posicao, saude, statusBatalha, unidade);
+        exercitos.add(exercito);
     }
 
     public List<String> obterTabuleiro() {
         List<String> saida = new ArrayList<String>();
-        for (Jogador jogador : this.jogadores) {
-            saida.add(jogador.obterJogador());
+        for (Exercito exercito : this.exercitos) {
+            saida.add(exercito.obterExercito());
         }
         return saida;
     }
