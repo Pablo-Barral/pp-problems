@@ -1,5 +1,5 @@
 <h1>Flyweight</h1>
-<h3>Desenvolvido em sala por: <h5>Pablo Barral</h5></h3>
+<h3>Desenvolvido em sala por: <h5>Maurício Reis, Pablo Barral</h5></h3>
 <p>Neste exemplo, é simulado um momento em um jogo de estratégia onde muitos personagens podem estar no tabuleiro em um mesmo momento.
  No exemplo, são utilizados apenas 5 jogadores, porém entende-se que a mesma lógica pode ser aplicada para um numero teoricamente
 infinito.</p>
