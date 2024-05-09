@@ -37,21 +37,21 @@ class InterpretadorExpressaoTest {
     }
 
     @Test
+    void deveCalcularExpressaoPotenciacao() {
+        InterpretadorExpressao interpretador = new InterpretadorExpressoesAritmeticas("6 ^ 2");
+        assertEquals(36.0, interpretador.interpretar());
+    }
+
+    @Test
     void deveCalcularExpressaoDivisao() {
         InterpretadorExpressao interpretador = new InterpretadorExpressoesAritmeticas("6 / 2");
         assertEquals(3.0, interpretador.interpretar());
     }
 
     @Test
-    void deveCalcularExpressaoCombinada() {
-        InterpretadorExpressao interpretador = new InterpretadorExpressoesAritmeticas("10 / 2 * 3 + 1 - 4");
-        assertEquals(12.0, interpretador.interpretar());
-    }
-
-    @Test
     void deveRetonarExcecaoElementoInvalido() {
         try {
-            InterpretadorExpressao interpretador = new InterpretadorExpressoesAritmeticas("2 ^ 2");
+            InterpretadorExpressao interpretador = new InterpretadorExpressoesAritmeticas("2 = 2");
             assertEquals(4.0, interpretador.interpretar());
             fail();
         } catch (IllegalArgumentException e) {

@@ -15,7 +15,6 @@ public class InterpretadorExpressoesAritmeticas implements InterpretadorExpressa
         List<String> elementos = Arrays.asList(contexto.split(" "));
         Iterator<String> iterator = elementos.iterator();
         
-        
         if(elementos.contains("(")){
             while(iterator.hasNext()){
                 String elemento = iterator.next();
@@ -71,7 +70,14 @@ public class InterpretadorExpressoesAritmeticas implements InterpretadorExpressa
                 Numero elementoDireita = new Numero(Double.parseDouble(iterator.next()));
                 Divisao interpretador = new Divisao(elementoEsquerda, elementoDireita);
                 pilhaInterpretadores.push(new Numero(interpretador.interpretar()));
-            } else {
+            } else if (elemento.equals("^")) {
+                 if (!iterator.hasNext())
+                     throw new IllegalArgumentException("Expressão inválida");
+                 Numero elementoEsquerda = (Numero) pilhaInterpretadores.pop();
+                 Numero elementoDireita = new Numero(Double.parseDouble(iterator.next()));
+                 Potenciacao interpretador = new Potenciacao(elementoEsquerda, elementoDireita);
+                 pilhaInterpretadores.push(new Numero(interpretador.interpretar()));
+             } else {
                 throw new IllegalArgumentException("Expressão com elemento inválido");
             }
         }

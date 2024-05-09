@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="68d76d64-f7e1-41d4-b72e-d2b1472aba40" name="Changes" comment="Aula 23/04 Bruno Mauricio Pablo">
-      <change afterPath="$PROJECT_DIR$/src/main/java/InterpreterProblem/README.md" afterDir="false" />
+    <list default="true" id="68d76d64-f7e1-41d4-b72e-d2b1472aba40" name="Changes" comment="Aula 08/05 Pablo">
+      <change afterPath="$PROJECT_DIR$/src/main/java/InterpreterProblem/Potenciacao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InterpreterProblem/InterpretadorExpressoesAritmeticas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InterpreterProblem/InterpretadorExpressoesAritmeticas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/InterpreterProblem/InterpretadorExpressaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/InterpreterProblem/InterpretadorExpressaoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +51,7 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.ConexaoTest">
+  <component name="RunManager" selected="JUnit.InterpretadorExpressaoTest">
     <configuration name="ConexaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pp-problems" />
       <extension name="coverage">
@@ -97,6 +99,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="InterpretadorExpressaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pp-problems" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="InterpreterProblem.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="InterpreterProblem" />
+      <option name="MAIN_CLASS_NAME" value="InterpreterProblem.InterpretadorExpressaoTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="JogoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pp-problems" />
       <extension name="coverage">
@@ -112,29 +129,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JogoTest.retornaTabuleiro" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="pp-problems" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="FlyweightProblem.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="FlyweightProblem" />
-      <option name="MAIN_CLASS_NAME" value="FlyweightProblem.JogoTest" />
-      <option name="METHOD_NAME" value="retornaTabuleiro" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.InterpretadorExpressaoTest" />
         <item itemvalue="JUnit.ConexaoTest" />
         <item itemvalue="JUnit.ConexaoTest.destruir" />
         <item itemvalue="JUnit.ConexaoTest.testeSingleton" />
         <item itemvalue="JUnit.JogoTest" />
-        <item itemvalue="JUnit.JogoTest.retornaTabuleiro" />
       </list>
     </recent_temporary>
   </component>
@@ -168,14 +169,22 @@
       <option name="project" value="LOCAL" />
       <updated>1713914710643</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Aula 08/05 Pablo">
+      <created>1715214206144</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1715214206144</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Aula 09/04 Bruno Natanael Mauricio Pablo" />
     <MESSAGE value="Aula 10/04 Pablo" />
     <MESSAGE value="Aula 23/04 Bruno Mauricio Pablo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aula 23/04 Bruno Mauricio Pablo" />
+    <MESSAGE value="Aula 08/05 Pablo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aula 08/05 Pablo" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/pp_problems$DetentoProxyTest.ic" NAME="DetentoProxyTest Coverage Results" MODIFIED="1712702520630" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -183,6 +192,9 @@
     </SUITE>
     <SUITE FILE_PATH="coverage/pp_problems$JogoTest.ic" NAME="JogoTest Coverage Results" MODIFIED="1712797124571" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>FlyweightProblem.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/pp_problems$InterpretadorExpressaoTest.ic" NAME="InterpretadorExpressaoTest Coverage Results" MODIFIED="1715214736303" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>InterpreterProblem.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/pp_problems$ConexaoTest.ic" NAME="ConexaoTest Coverage Results" MODIFIED="1713913814846" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>SingletonProblem.*</FILTER>
