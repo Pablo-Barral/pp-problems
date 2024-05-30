@@ -11,15 +11,28 @@ class DocumentoTest {
     void armazenarEstados() {
         Documento documento = new Documento();
         documento.setEstado(TextoEstadoDigitado.getInstance());
-        documento.setEstado(TextoEstadoFormatado.getInstance());
+        documento.setEstado(TextoEstadoNegrito.getInstance());
         assertEquals(2, documento.getEstados().size());
+    }
+
+    @Test
+    void formatarTexto() {
+        Documento documento = new Documento();
+        documento.setEstado(TextoEstadoDigitado.getInstance());
+        documento.setEstado(TextoEstadoNegrito.getInstance());
+        assertEquals("negrito", documento.getEstado().getNomeEstado());
+        documento.desfazer();
+        documento.setEstado(TextoEstadoItalico.getInstance());
+        assertEquals("itálico", documento.getEstado().getNomeEstado());
+        documento.setEstado(TextoEstadoSublinhado.getInstance());
+        assertEquals("sublinhado", documento.getEstado().getNomeEstado());
     }
 
     @Test
     void desfazerUltimaAcao() {
         Documento documento = new Documento();
         documento.setEstado(TextoEstadoDigitado.getInstance());
-        documento.setEstado(TextoEstadoFormatado.getInstance());
+        documento.setEstado(TextoEstadoNegrito.getInstance());
         documento.desfazer();
         assertEquals("digitado", documento.getEstado().getNomeEstado());
     }
@@ -28,10 +41,10 @@ class DocumentoTest {
     void refazerAcaoDesfeita() {
         Documento documento = new Documento();
         documento.setEstado(TextoEstadoDigitado.getInstance());
-        documento.setEstado(TextoEstadoFormatado.getInstance());
+        documento.setEstado(TextoEstadoNegrito.getInstance());
         documento.desfazer();
         documento.refazer();
-        assertEquals("formatado", documento.getEstado().getNomeEstado());
+        assertEquals("negrito", documento.getEstado().getNomeEstado());
 
     }
 
@@ -39,7 +52,7 @@ class DocumentoTest {
     void continuarDePontoAnterior() {
         Documento documento = new Documento();
         documento.setEstado(TextoEstadoDigitado.getInstance());
-        documento.setEstado(TextoEstadoFormatado.getInstance());
+        documento.setEstado(TextoEstadoNegrito.getInstance());
         documento.setEstado(TextoEstadoExcluido.getInstance());
         documento.desfazer();
         documento.setEstado(TextoEstadoDigitado.getInstance());
