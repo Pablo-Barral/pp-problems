@@ -15,6 +15,12 @@ public class Documento {
     }
 
     public void setEstado(TextoEstado estado) {
+        if(estadoAtivo < memento.size() - 1){
+                for (int i = memento.size() - 1; i > estadoAtivo ; i--) {
+                    memento.remove(i);
+                }
+                estadoAtivo = memento.size() - 1;
+        }
         this.estado = estado;
         this.memento.add(this.estado);
         this.estadoAtivo += 1;

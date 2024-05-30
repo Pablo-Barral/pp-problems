@@ -36,17 +36,15 @@ class DocumentoTest {
     }
 
     @Test
-    void chegarAcaoDesejada() {
+    void continuarDePontoAnterior() {
         Documento documento = new Documento();
         documento.setEstado(TextoEstadoDigitado.getInstance());
         documento.setEstado(TextoEstadoFormatado.getInstance());
         documento.setEstado(TextoEstadoExcluido.getInstance());
         documento.desfazer();
-        documento.desfazer();
-        documento.refazer();
-        documento.refazer();
-        assertEquals("excluído", documento.getEstado().getNomeEstado());
-
+        documento.setEstado(TextoEstadoDigitado.getInstance());
+        assertEquals("digitado", documento.getEstado().getNomeEstado());
+        assertEquals(3, documento.getEstados().size());
     }
 
     @Test
